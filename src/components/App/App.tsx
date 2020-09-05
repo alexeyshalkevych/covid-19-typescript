@@ -1,5 +1,5 @@
 import React from 'react';
-import ControlSelect from './ControlSelect/ControlSelect';
+import ControlSelect from '../ControlSelect/ControlSelect';
 import './App.css';
 
 const App: React.FC = () => {
