@@ -2,3 +2,26 @@
   margin: 0;
   padding: 0;
 }
+
+.App {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #f5f6fa;
+  padding: 20px;
+}
+
+.App__left {
+  flex: 0.9;
+}
+
+.App__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.App__stats {
+  display: flex;
+  justify-content: space-between;
+}

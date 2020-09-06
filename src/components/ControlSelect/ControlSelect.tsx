@@ -10,6 +10,11 @@ const ControlSelect: React.FC = () => {
   const countries = useSelector(getCountries);
 
   useEffect(() => {
+    const value = 'worldwide';
+    dispatch({ type: FETCH_COUNTRY, value });
+  }, [dispatch]);
+
+  useEffect(() => {
     dispatch({ type: FETCH_COUNTRIES });
   }, [dispatch]);
 
