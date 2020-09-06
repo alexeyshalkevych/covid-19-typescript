@@ -4,6 +4,7 @@ import ControlSelect from '../ControlSelect/ControlSelect';
 import InfoBox from '../InfoBox/InfoBox';
 import { getCountry } from '../../store/selectors/covidSelectors';
 import TableCountries from '../TableCountries/TableCountries';
+import LineGraph from '../LineGraph/LineGraph';
 import './App.css';
 
 const App: React.FC = () => {
@@ -35,6 +36,7 @@ const App: React.FC = () => {
         </div>
       </div>
       <TableCountries />
+      <LineGraph casesType="cases" />
     </div>
   );
 };

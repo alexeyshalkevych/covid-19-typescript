@@ -82,6 +82,18 @@ export interface IActionCountriesError {
   payload: ICountriesError;
 }
 
+export interface ICovidHistory {
+  cases: any;
+  deathes: any;
+  recovered: any;
+}
+
+export interface IActionGetCovidHistory {
+  type: string;
+  payload?: ICovidHistory;
+}
+
 export type CountriesState = ICountry[] | undefined;
 export type CountryState = ICountry | IAllCountry | undefined;
+export type CovidHistoryState = ICovidHistory | undefined;
 export type ErrorState = ICountriesError | null;
