@@ -6,16 +6,33 @@ interface IINfoBoxProps {
   title: string;
   cases: number;
   total: number;
+  active: boolean;
+  isRed?: boolean;
+  onClick: () => void;
 }
 
-const InfoBox: React.FC<IINfoBoxProps> = ({ title, cases, total }) => {
+const InfoBox: React.FC<IINfoBoxProps> = ({
+  title,
+  cases,
+  total,
+  active,
+  isRed,
+  onClick,
+}) => {
   return (
-    <Card className="infoBox">
+    <Card
+      className={`infoBox ${active && 'infoBox--selected'} ${
+        isRed && 'infoBox--red'
+      }`}
+      onClick={onClick}
+    >
       <CardContent>
         <Typography color="textSecondary" gutterBottom>
           {title}
         </Typography>
-        <h2 className="infoBox__cases">{cases}</h2>
+        <h2 className={`infoBox__cases ${!isRed && 'infoBox__cases--green'}`}>
+          {cases}
+        </h2>
         <Typography className="infoBox__total" color="textSecondary">
           {total} Total
         </Typography>
