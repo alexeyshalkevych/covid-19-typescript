@@ -1,9 +1,10 @@
-import { call, put, all, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
+import { SagaIterator } from 'redux-saga';
 import {
   getCountriesRequest,
   getCountriesSuccess,
   getCountriesError,
-} from '../actions/covidActions';
+} from '../actions/covidCountriesActions';
 import { fetchCountries } from '../../services/covidService';
 import { FETCH_COUNTRIES } from '../../constants/actionTypes';
 import { getCountriesNameAndValue } from '../../helpers/getCountriesNameAndValue';
@@ -20,12 +21,8 @@ function* getCountriesWorker() {
   }
 }
 
-function* getCountriesWatcher() {
+function* getCountriesWatcher(): SagaIterator<void> {
   yield takeLatest(FETCH_COUNTRIES, getCountriesWorker);
 }
 
-function* rootSaga(): Generator {
-  yield all([getCountriesWatcher()]);
-}
-
-export default rootSaga;
+export default getCountriesWatcher;

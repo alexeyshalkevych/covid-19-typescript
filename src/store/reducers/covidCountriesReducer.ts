@@ -3,7 +3,7 @@ import { IActionGetCountries, CountriesState } from '../../types';
 
 const initialState: CountriesState = [];
 
-const covidReducer = (
+const covidCountriesReducer = (
   state = initialState,
   { type, payload }: IActionGetCountries,
 ): CountriesState => {
@@ -16,4 +16,4 @@ const covidReducer = (
   }
 };
 
-export default covidReducer;
+export default covidCountriesReducer;

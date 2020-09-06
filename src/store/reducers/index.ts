@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
-import covidReducer from './covidReducer';
+import covidCountriesReducer from './covidCountriesReducer';
 import covidErrorReducer from './covidErrors';
+import covidCountryReducer from './covidCountryReducer';
 
 const rootReducer = combineReducers({
-  countries: covidReducer,
+  countries: covidCountriesReducer,
+  country: covidCountryReducer,
   error: covidErrorReducer,
 });
 
