@@ -1,7 +1,7 @@
 interface ICountryInfo {
-  _id: number | null;
-  iso2: string | null;
-  iso3: string | null;
+  _id: number;
+  iso2: string;
+  iso3: string;
   lat: number;
   long: number;
   flag: string;
@@ -37,3 +37,21 @@ export interface IMyCountry {
   name: string;
   value: string;
 }
+
+export interface IActionGetCountries {
+  type: string;
+  payload?: IMyCountry[];
+}
+
+export interface ICountriesError {
+  status: number;
+  statusText: string;
+}
+
+export interface IActionCountriesError {
+  type: string;
+  payload: ICountriesError;
+}
+
+export type CountriesState = IMyCountry[] | undefined;
+export type ErrorState = ICountriesError | null;

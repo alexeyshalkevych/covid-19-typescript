@@ -6,10 +6,7 @@ axios.defaults.baseURL = 'https://disease.sh/';
 export const fetchCountries = async (): Promise<IMyCountry[]> => {
   const { data } = await axios.get('v3/covid-19/countries');
 
-  return data.map((country: ICountry) => ({
-    name: country.country,
-    value: country.countryInfo.iso2,
-  }));
+  return data;
 };
 
 export const fetchCountry = async (countryCode: string): Promise<ICountry> => {

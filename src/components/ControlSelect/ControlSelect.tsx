@@ -1,21 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { FormControl, Select, MenuItem } from '@material-ui/core';
-import { IMyCountry } from '../../types';
-import { fetchCountries } from '../../services/covidService';
+import { useDispatch, useSelector } from 'react-redux';
+import { FETCH_COUNTRIES } from '../../constants/actionTypes';
+import { getCountries } from '../../store/selectors/covidSelectors';
 
 const ControlSelect: React.FC = () => {
   const [country, setCountry] = useState<string>('worldwide');
-  const [countries, setCountries] = useState<IMyCountry[]>([]);
+  const dispatch = useDispatch();
+  const countries = useSelector(getCountries);
 
   useEffect(() => {
-    const fetchDataCountries = async () => {
-      const countriesData = await fetchCountries();
-
-      setCountries(countriesData);
-    };
-
-    fetchDataCountries();
-  }, []);
+    dispatch({ type: FETCH_COUNTRIES });
+  }, [dispatch]);
 
   const chnageSelectHandler = (
     event: React.ChangeEvent<{ value: unknown }>,
