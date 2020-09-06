@@ -4,7 +4,7 @@ import {
   FETCH_COUNTRIES_ERROR,
 } from '../../constants/actionTypes';
 import {
-  IMyCountry,
+  ICountry,
   IActionGetCountries,
   ICountriesError,
   IActionCountriesError,
@@ -15,7 +15,7 @@ export const getCountriesRequest = (): IActionGetCountries => ({
 });
 
 export const getCountriesSuccess = (
-  countries: IMyCountry[],
+  countries: ICountry[],
 ): IActionGetCountries => ({
   type: FETCH_COUNTRIES_SUCCESS,
   payload: countries,

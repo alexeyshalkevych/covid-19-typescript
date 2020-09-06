@@ -1,5 +1,5 @@
 interface ICountryInfo {
-  _id: number;
+  _id: number | null;
   iso2: string;
   iso3: string;
   lat: number;
@@ -64,7 +64,7 @@ export interface IMyCountry {
 
 export interface IActionGetCountries {
   type: string;
-  payload?: IMyCountry[];
+  payload?: ICountry[];
 }
 
 export interface IActionGetCountry {
@@ -82,6 +82,6 @@ export interface IActionCountriesError {
   payload: ICountriesError;
 }
 
-export type CountriesState = IMyCountry[] | undefined;
+export type CountriesState = ICountry[] | undefined;
 export type CountryState = ICountry | IAllCountry | undefined;
 export type ErrorState = ICountriesError | null;

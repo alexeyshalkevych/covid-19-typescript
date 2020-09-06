@@ -1,9 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import ControlSelect from '../ControlSelect/ControlSelect';
-import './App.css';
 import InfoBox from '../InfoBox/InfoBox';
 import { getCountry } from '../../store/selectors/covidSelectors';
+import TableCountries from '../TableCountries/TableCountries';
+import './App.css';
 
 const App: React.FC = () => {
   const country = useSelector(getCountry);
@@ -33,6 +34,7 @@ const App: React.FC = () => {
           />
         </div>
       </div>
+      <TableCountries />
     </div>
   );
 };

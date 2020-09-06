@@ -1,7 +1,7 @@
-import { IMyCountry, ICountriesError, ICountry } from '../../types';
+import { ICountriesError, ICountry } from '../../types';
 
 interface IStateCountries {
-  countries: IMyCountry[];
+  countries: ICountry[];
 }
 
 interface IStateError {
@@ -12,7 +12,7 @@ interface IStateCountry {
   country: ICountry;
 }
 
-export const getCountries = (state: IStateCountries): IMyCountry[] =>
+export const getCountries = (state: IStateCountries): ICountry[] =>
   state.countries;
 
 export const getCountry = (state: IStateCountry): ICountry => state.country;

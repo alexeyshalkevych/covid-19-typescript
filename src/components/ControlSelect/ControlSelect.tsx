@@ -3,11 +3,12 @@ import { FormControl, Select, MenuItem } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { FETCH_COUNTRIES, FETCH_COUNTRY } from '../../constants/actionTypes';
 import { getCountries } from '../../store/selectors/covidSelectors';
+import getCountriesNameAndValue from '../../helpers/getCountriesNameAndValue';
 
 const ControlSelect: React.FC = () => {
   const [countryField, setCountryField] = useState<string>('worldwide');
   const dispatch = useDispatch();
-  const countries = useSelector(getCountries);
+  const countries = getCountriesNameAndValue(useSelector(getCountries));
 
   useEffect(() => {
     const value = 'worldwide';

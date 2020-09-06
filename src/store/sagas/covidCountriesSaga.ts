@@ -7,7 +7,6 @@ import {
 } from '../actions/covidCountriesActions';
 import { fetchCountries } from '../../services/covidService';
 import { FETCH_COUNTRIES } from '../../constants/actionTypes';
-import { getCountriesNameAndValue } from '../../helpers/getCountriesNameAndValue';
 
 function* getCountriesWorker() {
   yield put(getCountriesRequest());
@@ -15,7 +14,7 @@ function* getCountriesWorker() {
   try {
     const countries = yield call(fetchCountries);
 
-    yield put(getCountriesSuccess(getCountriesNameAndValue(countries)));
+    yield put(getCountriesSuccess(countries));
   } catch (error) {
     yield put(getCountriesError(error.response));
   }
