@@ -6,6 +6,8 @@ import InfoBox from '../InfoBox/InfoBox';
 import { getCountry } from '../../store/selectors/covidSelectors';
 import TableCountries from '../TableCountries/TableCountries';
 import LineGraph from '../LineGraph/LineGraph';
+import Map from '../Map/Map';
+import 'leaflet/dist/leaflet.css';
 import './App.css';
 
 const App: React.FC = () => {
@@ -44,6 +46,7 @@ const App: React.FC = () => {
             active={cases === 'deaths'}
           />
         </div>
+        <Map casesType={cases} />
       </div>
       <Card>
         <CardContent>
