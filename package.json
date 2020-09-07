@@ -1,7 +1,25 @@
 {
   "name": "covid-19-typescript",
+  "description": "Build covid-19 tracker with react-typescript",
+  "keywords": [
+    "typescript",
+    "react",
+    "redux",
+    "redux-saga",
+    "chart.js",
+    "covid-19"
+  ],
+  "author": "Aleksey Shalkevych <aleksey.shalkevych@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexeyshalkevych/covid-19-typescript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexeyshalkevych/covid-19-typescript/issues"
+  },
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://alexeyshalkevych.github.io/covid-19-typescript",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@testing-library/jest-dom": "^4.2.4",
@@ -33,7 +51,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -61,6 +81,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
+    "gh-pages": "^3.1.0",
     "prettier": "^2.1.1"
   }
 }
