@@ -12,7 +12,7 @@ interface ICovidStatisticsProps {
 const CovidStatistics: React.FC<ICovidStatisticsProps> = ({
   cases,
   onSetCases,
-}) => {
+}: ICovidStatisticsProps) => {
   const country = useSelector<IStateCountry, ICountry>(getCountry);
 
   return (

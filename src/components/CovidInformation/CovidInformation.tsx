@@ -8,7 +8,9 @@ interface ICovidInformationProps {
   cases: Cases;
 }
 
-const CovidInformation: React.FC<ICovidInformationProps> = ({ cases }) => {
+const CovidInformation: React.FC<ICovidInformationProps> = ({
+  cases,
+}: ICovidInformationProps) => {
   return (
     <Card>
       <CardContent>

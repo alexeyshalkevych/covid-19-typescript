@@ -49,7 +49,7 @@ interface IMapProps {
   casesType: Cases;
 }
 
-const Map: React.FC<IMapProps> = ({ casesType }) => {
+const Map: React.FC<IMapProps> = ({ casesType }: IMapProps) => {
   const countries = useSelector<IStateCountries, ICountry[]>(getCountries);
   const country = useSelector<IStateCountry, ICountry>(getCountry);
 

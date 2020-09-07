@@ -4,12 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FETCH_COUNTRIES, FETCH_COUNTRY } from '../../constants/actionTypes';
 import { getCountries } from '../../store/selectors/covidSelectors';
 import getCountriesNameAndValue from '../../helpers/getCountriesNameAndValue';
+import { ICountry, IStateCountries } from '../../@types/types';
 import './ControlSelector.css';
 
 const ControlSelect: React.FC = () => {
   const [countryField, setCountryField] = useState<string>('worldwide');
   const dispatch = useDispatch();
-  const countries = getCountriesNameAndValue(useSelector(getCountries));
+  const countries = getCountriesNameAndValue(
+    useSelector<IStateCountries, ICountry[]>(getCountries),
+  );
 
   useEffect(() => {
     const value = 'worldwide';

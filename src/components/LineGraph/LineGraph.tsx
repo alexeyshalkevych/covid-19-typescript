@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import numeral from 'numeral';
 import { fetchCovidHistoryByLastThreeMonth } from '../../services/covidService';
-import { Cases, IGraph } from '../../@types/types';
+import { Cases, IGraph, ICovidHistory } from '../../@types/types';
 import buildChartData from '../../helpers/buildChartData';
 
 interface ITooltipItem {
@@ -57,13 +57,15 @@ interface ILineGraphProps {
   casesType: Cases;
 }
 
-const LineGraph: React.FC<ILineGraphProps> = ({ casesType }) => {
+const LineGraph: React.FC<ILineGraphProps> = ({
+  casesType,
+}: ILineGraphProps) => {
   const [data, setData] = useState<IGraph[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchCovidHistoryByLastThreeMonth();
-      const chartData = buildChartData(data, casesType);
+      const data: ICovidHistory = await fetchCovidHistoryByLastThreeMonth();
+      const chartData: IGraph[] = buildChartData(data, casesType);
 
       setData(chartData);
     };

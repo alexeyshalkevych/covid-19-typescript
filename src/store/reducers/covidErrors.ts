@@ -8,7 +8,7 @@ import {
 } from '../../constants/actionTypes';
 import { ErrorState, IActionCountriesError } from '../../@types/types';
 
-const initialState: ErrorState = null;
+const initialState: ErrorState = null as any;
 
 const covidErrorReducer = (
   state = initialState,

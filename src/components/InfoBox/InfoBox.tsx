@@ -19,7 +19,7 @@ const InfoBox: React.FC<IINfoBoxProps> = ({
   active,
   isRed,
   onClick,
-}) => {
+}: IINfoBoxProps) => {
   return (
     <Card
       className={`infoBox ${active && 'infoBox--selected'} ${
