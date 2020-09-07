@@ -35,3 +35,9 @@
   font-size: 0.8rem !important;
   margin-top: 15px !important;
 }
+
+@media (max-width: 500px) {
+  .infoBox {
+    text-align: center;
+  }
+}
