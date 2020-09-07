@@ -3,10 +3,23 @@ import { Map as LeafletMap, TileLayer, Circle, Popup } from 'react-leaflet';
 import { useSelector } from 'react-redux';
 import numeral from 'numeral';
 import { getCountries, getCountry } from '../../store/selectors/covidSelectors';
+import { ICountry, Cases, IStateCountries, IStateCountry } from '../../types';
 import './Map.css';
-import { ICountry } from '../../types';
 
-const casesTypeColors = {
+interface ICasesType {
+  hex: string;
+  rgb: string;
+  half_op: string;
+  multiplier: number;
+}
+
+interface ICasesTypeColors {
+  cases: ICasesType;
+  recovered: ICasesType;
+  deaths: ICasesType;
+}
+
+const casesTypeColors: ICasesTypeColors = {
   cases: {
     hex: '#CC1034',
     rgb: 'rgb(204, 16, 52)',
@@ -28,12 +41,12 @@ const casesTypeColors = {
 };
 
 interface IMapProps {
-  casesType: string;
+  casesType: Cases;
 }
 
 const Map: React.FC<IMapProps> = ({ casesType }) => {
-  const countries = useSelector(getCountries);
-  const country = useSelector(getCountry);
+  const countries = useSelector<IStateCountries, ICountry[]>(getCountries);
+  const country = useSelector<IStateCountry, ICountry>(getCountry);
 
   return (
     <div className="map">
@@ -51,8 +64,8 @@ const Map: React.FC<IMapProps> = ({ casesType }) => {
         {countries.map((country: ICountry) => (
           <Circle
             center={[country.countryInfo.lat, country.countryInfo.long]}
-            color={casesTypeColors.cases.hex}
-            fillColor={casesTypeColors.cases.hex}
+            color={casesTypeColors[casesType].hex}
+            fillColor={casesTypeColors[casesType].hex}
             fillOpacity={0.4}
             radius={Math.sqrt(country.cases) * casesTypeColors.cases.multiplier}
             key={country.countryInfo.iso2 + country.country}

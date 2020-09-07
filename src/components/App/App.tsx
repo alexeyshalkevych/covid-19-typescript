@@ -4,6 +4,7 @@ import { Card, CardContent } from '@material-ui/core';
 import ControlSelect from '../ControlSelect/ControlSelect';
 import InfoBox from '../InfoBox/InfoBox';
 import { getCountry } from '../../store/selectors/covidSelectors';
+import { Cases } from '../../types';
 import TableCountries from '../TableCountries/TableCountries';
 import LineGraph from '../LineGraph/LineGraph';
 import Map from '../Map/Map';
@@ -12,7 +13,7 @@ import './App.css';
 
 const App: React.FC = () => {
   const country = useSelector(getCountry);
-  const [cases, setCases] = useState<string>('cases');
+  const [cases, setCases] = useState<Cases>('cases');
 
   return (
     <div className="App">

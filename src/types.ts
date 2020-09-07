@@ -97,3 +97,21 @@ export type CountriesState = ICountry[] | undefined;
 export type CountryState = ICountry | IAllCountry | undefined;
 export type CovidHistoryState = ICovidHistory | undefined;
 export type ErrorState = ICountriesError | null;
+
+export type Cases = 'cases' | 'recovered' | 'deaths';
+
+export interface IStateCountries {
+  countries: ICountry[];
+}
+
+export interface IStateError {
+  error: ICountriesError;
+}
+
+export interface IStateCountry {
+  country: ICountry;
+}
+
+export interface IStateCovidHistory {
+  history: ICovidHistory;
+}

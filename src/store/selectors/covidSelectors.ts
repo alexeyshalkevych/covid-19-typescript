@@ -1,20 +1,12 @@
-import { ICountriesError, ICountry, ICovidHistory } from '../../types';
-
-interface IStateCountries {
-  countries: ICountry[];
-}
-
-interface IStateError {
-  error: ICountriesError;
-}
-
-interface IStateCountry {
-  country: ICountry;
-}
-
-interface IStateCovidHistory {
-  history: ICovidHistory;
-}
+import {
+  ICountriesError,
+  ICountry,
+  ICovidHistory,
+  IStateCountries,
+  IStateCountry,
+  IStateError,
+  IStateCovidHistory,
+} from '../../types';
 
 export const getCountries = (state: IStateCountries): ICountry[] =>
   state.countries;
