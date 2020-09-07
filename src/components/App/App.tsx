@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Card, CardContent } from '@material-ui/core';
 import ControlSelect from '../ControlSelect/ControlSelect';
 import InfoBox from '../InfoBox/InfoBox';
 import { getCountry } from '../../store/selectors/covidSelectors';
 import { Cases } from '../../types';
-import TableCountries from '../TableCountries/TableCountries';
-import LineGraph from '../LineGraph/LineGraph';
 import Map from '../Map/Map';
 import 'leaflet/dist/leaflet.css';
 import './App.css';
+import CovidInformation from '../CovidInformation/CovidInformation';
 
 const App: React.FC = () => {
   const country = useSelector(getCountry);
@@ -49,16 +47,7 @@ const App: React.FC = () => {
         </div>
         <Map casesType={cases} />
       </div>
-      <Card>
-        <CardContent>
-          <div className="App__information">
-            <h3>Live Cases by Country</h3>
-            <TableCountries />
-            <h3>Worldwide new {cases}</h3>
-            <LineGraph casesType={cases} />
-          </div>
-        </CardContent>
-      </Card>
+      <CovidInformation cases={cases} />
     </div>
   );
 };
