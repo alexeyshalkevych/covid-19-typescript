@@ -4,7 +4,7 @@ import {
   CountryState,
   ICountry,
   IAllCountry,
-} from '../../types';
+} from '../../@types/types';
 
 const initialState: CountryState = {} as ICountry | IAllCountry;
 

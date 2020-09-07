@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent } from '@material-ui/core';
 import TableCountries from '../TableCountries/TableCountries';
 import LineGraph from '../LineGraph/LineGraph';
-import { Cases } from '../../types';
+import { Cases } from '../../@types/types';
 
 interface ICovidInformationProps {
   cases: Cases;

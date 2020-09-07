@@ -3,7 +3,12 @@ import { Map as LeafletMap, TileLayer, Circle, Popup } from 'react-leaflet';
 import { useSelector } from 'react-redux';
 import numeral from 'numeral';
 import { getCountries, getCountry } from '../../store/selectors/covidSelectors';
-import { ICountry, Cases, IStateCountries, IStateCountry } from '../../types';
+import {
+  ICountry,
+  Cases,
+  IStateCountries,
+  IStateCountry,
+} from '../../@types/types';
 import './Map.css';
 
 interface ICasesType {

@@ -1,4 +1,4 @@
-import { ICountry, IMyCountry } from '../types';
+import { ICountry, IMyCountry } from '../@types/types';
 
 const getCountriesNameAndValue = (countries: ICountry[]): IMyCountry[] => {
   return countries.map((country: ICountry) => ({

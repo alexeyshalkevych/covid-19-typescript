@@ -8,7 +8,7 @@ import {
   IActionGetCountries,
   ICountriesError,
   IActionCountriesError,
-} from '../../types';
+} from '../../@types/types';
 
 export const getCountriesRequest = (): IActionGetCountries => ({
   type: FETCH_COUNTRIES_REQUEST,

@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import numeral from 'numeral';
 import { fetchCovidHistoryByLastThreeMonth } from '../../services/covidService';
+import { Cases, IGraph } from '../../@types/types';
+import buildChartData from '../../helpers/buildChartData';
+
+interface ITooltipItem {
+  value: number;
+}
 
 const options = {
   legend: {
@@ -17,7 +23,7 @@ const options = {
     mode: 'index',
     intersect: false,
     callbacks: {
-      label(tooltipItem: any) {
+      label(tooltipItem: ITooltipItem) {
         return numeral(tooltipItem.value).format('+0,0');
       },
     },
@@ -38,8 +44,7 @@ const options = {
           display: false,
         },
         ticks: {
-          // Include a dollar sign in the ticks
-          callback(value: any) {
+          callback(value: number) {
             return numeral(value).format('0a');
           },
         },
@@ -48,30 +53,12 @@ const options = {
   },
 };
 
-const buildChartData = (data: any, casesType: string) => {
-  const chartData: any = [];
-  let lastDataPoint: number;
-
-  Object.keys(data.cases || {}).forEach(date => {
-    if (lastDataPoint) {
-      const newDataPoint = {
-        x: date,
-        y: data[casesType][date] - lastDataPoint,
-      };
-      chartData.push(newDataPoint);
-    }
-    lastDataPoint = data[casesType][date];
-  });
-
-  return chartData;
-};
-
 interface ILineGraphProps {
-  casesType: string;
+  casesType: Cases;
 }
 
 const LineGraph: React.FC<ILineGraphProps> = ({ casesType }) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<IGraph[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {

@@ -6,7 +6,7 @@ import {
   FETCH_COUNTRY_SUCCESS,
   FETCH_COUNTRY_ERROR,
 } from '../../constants/actionTypes';
-import { ErrorState, IActionCountriesError } from '../../types';
+import { ErrorState, IActionCountriesError } from '../../@types/types';
 
 const initialState: ErrorState = null;
 

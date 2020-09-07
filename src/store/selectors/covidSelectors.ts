@@ -6,7 +6,7 @@ import {
   IStateCountry,
   IStateError,
   IStateCovidHistory,
-} from '../../types';
+} from '../../@types/types';
 
 export const getCountries = (state: IStateCountries): ICountry[] =>
   state.countries;

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ICountry, IMyCountry, ICovidHistory } from '../types';
+import { ICountry, IMyCountry, ICovidHistory } from '../@types/types';
 
 axios.defaults.baseURL = 'https://disease.sh/';
 

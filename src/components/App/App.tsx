@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ControlSelect from '../ControlSelect/ControlSelect';
-import { Cases } from '../../types';
+import { Cases } from '../../@types/types';
 import Map from '../Map/Map';
 import CovidInformation from '../CovidInformation/CovidInformation';
 import CovidStatistics from '../CovidStatistics/CovidStatistics';

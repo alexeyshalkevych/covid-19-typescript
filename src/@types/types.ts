@@ -84,7 +84,7 @@ export interface IActionCountriesError {
 
 export interface ICovidHistory {
   cases: any;
-  deathes: any;
+  deaths: any;
   recovered: any;
 }
 
@@ -114,4 +114,9 @@ export interface IStateCountry {
 
 export interface IStateCovidHistory {
   history: ICovidHistory;
+}
+
+export interface IGraph {
+  x: string;
+  y: number;
 }

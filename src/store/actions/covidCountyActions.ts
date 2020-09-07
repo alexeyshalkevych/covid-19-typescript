@@ -9,7 +9,7 @@ import {
   IActionGetCountry,
   ICountriesError,
   IActionCountriesError,
-} from '../../types';
+} from '../../@types/types';
 
 export const getCountryRequest = (): IActionGetCountries => ({
   type: FETCH_COUNTRY_REQUEST,

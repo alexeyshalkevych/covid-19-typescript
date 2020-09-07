@@ -8,7 +8,7 @@ import {
   IActionGetCovidHistory,
   ICountriesError,
   IActionCountriesError,
-} from '../../types';
+} from '../../@types/types';
 
 export const getCovidHistoryRequest = (): IActionGetCovidHistory => ({
   type: FETCH_COVID_HISTORY_REQUEST,

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { getCountry } from '../../store/selectors/covidSelectors';
 import InfoBox from '../InfoBox/InfoBox';
-import { Cases, IStateCountry, ICountry } from '../../types';
+import { Cases, IStateCountry, ICountry } from '../../@types/types';
 
 interface ICovidStatisticsProps {
   cases: Cases;

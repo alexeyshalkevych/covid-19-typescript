@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@material-ui/core';
+import numeral from 'numeral';
 import './InfoBox.css';
 
 interface IINfoBoxProps {
@@ -34,7 +35,7 @@ const InfoBox: React.FC<IINfoBoxProps> = ({
           {cases}
         </h2>
         <Typography className="infoBox__total" color="textSecondary">
-          {total} Total
+          {numeral(total).format('0.0a')} Total
         </Typography>
       </CardContent>
     </Card>

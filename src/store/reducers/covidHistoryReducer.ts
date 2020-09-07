@@ -2,7 +2,7 @@ import {
   CovidHistoryState,
   ICovidHistory,
   IActionGetCovidHistory,
-} from '../../types';
+} from '../../@types/types';
 import { FETCH_COVID_HISTORY_SUCCESS } from '../../constants/actionTypes';
 
 const initialState: CovidHistoryState = {} as ICovidHistory;

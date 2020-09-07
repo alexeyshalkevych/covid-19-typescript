@@ -1,5 +1,5 @@
 import { FETCH_COUNTRIES_SUCCESS } from '../../constants/actionTypes';
-import { IActionGetCountries, CountriesState } from '../../types';
+import { IActionGetCountries, CountriesState } from '../../@types/types';
 
 const initialState: CountriesState = [];
 
