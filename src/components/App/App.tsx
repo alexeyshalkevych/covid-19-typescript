@@ -18,7 +18,7 @@ const App: React.FC = () => {
     <div className="App">
       <div className="App__left">
         <div className="App__header">
-          <h1>COVID-19 Tracker</h1>
+          <h1>COVID-19 TRACKER</h1>
           <ControlSelect />
         </div>
         <CovidStatistics cases={cases} onSetCases={setCasesState} />

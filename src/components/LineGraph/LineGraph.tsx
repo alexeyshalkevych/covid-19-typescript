@@ -78,8 +78,11 @@ const LineGraph: React.FC<ILineGraphProps> = ({ casesType }) => {
           data={{
             datasets: [
               {
-                backgroundColor: 'rgba(204, 16, 52, 0.5)',
-                borderColor: '#CC1034',
+                backgroundColor:
+                  casesType === 'recovered'
+                    ? 'rgba(65, 204, 1, 0.5)'
+                    : 'rgba(204, 16, 52, 0.5)',
+                borderColor: casesType === 'recovered' ? '#00350d' : '#CC1034',
                 data,
               },
             ],

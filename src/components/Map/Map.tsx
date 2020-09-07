@@ -60,7 +60,7 @@ const Map: React.FC<IMapProps> = ({ casesType }) => {
           country.countryInfo?.lat || 34.80746,
           country.countryInfo?.long || -40.4796,
         ]}
-        zoom={4}
+        zoom={3}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
