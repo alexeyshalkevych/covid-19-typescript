@@ -45,6 +45,14 @@ body {
   .App__stats {
     flex-direction: column;
   }
+
+  .App__header {
+    flex-direction: column;
+  }
+
+  .App__header > h1 {
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 990px) {

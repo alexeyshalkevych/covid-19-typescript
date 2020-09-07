@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FETCH_COUNTRIES, FETCH_COUNTRY } from '../../constants/actionTypes';
 import { getCountries } from '../../store/selectors/covidSelectors';
 import getCountriesNameAndValue from '../../helpers/getCountriesNameAndValue';
+import './ControlSelector.css';
 
 const ControlSelect: React.FC = () => {
   const [countryField, setCountryField] = useState<string>('worldwide');
@@ -30,7 +31,7 @@ const ControlSelect: React.FC = () => {
   };
 
   return (
-    <FormControl>
+    <FormControl className="formControl">
       <Select
         variant="outlined"
         value={countryField}
